@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homegrown Recipes</title>
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+</head>
+
+<body class="teal lighten-5">
+    <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+            <a href="/">Homegrown<span> Recipes</a>
+            <span class="left white-text text-darken-1">
+                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+            </span>
+        </div>
+    </nav>    
+
+    <ul id="side-menu" class="sidenav side-menu">
+        <li><a class="subheader">HOMEGROWN RECIPES</a></li>
+        <li><a href="/index.html">Home<i class="material-icons">home</i></a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="/pages/breakfast.html">Breakfast<i class="material-icons">local_cafe</i></a></li>
+        <li><a href="/pages/dinner.html">Dinner<i class="material-icons">local_dining</i></a></li>
+        <li><a href="/pages/dessert.html">Dessert<i class="material-icons">cake</i></a></li>
+        <li><a href="/pages/reviews.html">Reviews<i class="material-icons">chat_bubble</i></a></li>
+        <li><div class="divider"></div></li>
+        <li class="logged-in">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in">
+            <a href="#" class="waves-effect" id="logout">Logout</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
+    </ul>
+    
+    <h2 class="center-align blue-grey-text text-darken-3">Reviews</h2>
+    <h6 class="center-align blue-grey-text"><i>**Please Login or Sign up (in menu) for review access.**</i></h6>
+
+    <div class="review container grey-text text-darken-4" id="reviews-container">
+    </div>
+                    
+            <!--Can do btn disabled to not allow to press button until form is filled out-->
+        <div class="center">
+            <a class="btn-floating btn-small teal sidenav-trigger" data-target="side-form">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
+    
+
+    <div id="side-form" class="sidenav side-form">
+        <form class="add-review container section">
+            <h6 class="center-align blue-grey-text text-darken-3">Review</h6>
+            <div class="divider"></div>
+            <div class="input-field">
+                <input placeholder="Enter review title" id="title" class="validate" type="text">
+                 <label for="title">Review Title</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="Enter review description" id="description" class="validate" type="text">
+                <label for="description">Review Description</label>
+            </div>
+
+            <div class="input-field center">
+                <button class="btn-small">Add</button>
+            </div>
+        </form>
+    </div>
+    <!--SIGN UP MODAL-->
+    <div id="modal-signup" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up</h4>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required>
+                    <label for ="signup-email">Email Address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required>
+                    <label for ="signup-password">Choose Password</label>
+                </div>
+                <button class="btn yellow text-darken-2 z-depth-0">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4><br />
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required />
+                    <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required />
+                    <label for="login-password">Your password</label>
+                </div>
+                <button class="btn yellow darken-2 z-depth-0">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+            <h4>Account details</h4><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
+    <script type="module" src="/js/db.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <!-- Include main Firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+
+    <!-- Include Firebase Messaging script -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging.js"></script>
+</body>
